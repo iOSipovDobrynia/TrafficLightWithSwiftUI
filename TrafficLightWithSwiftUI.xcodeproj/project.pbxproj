@@ -11,6 +11,7 @@
 		E3D1E7412AD04DA200179719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1E7402AD04DA200179719 /* ContentView.swift */; };
 		E3D1E7432AD04DA300179719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D1E7422AD04DA300179719 /* Assets.xcassets */; };
 		E3D1E7462AD04DA300179719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D1E7452AD04DA300179719 /* Preview Assets.xcassets */; };
+		E3D1E74D2AD04F4C00179719 /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D1E74C2AD04F4C00179719 /* ColorCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E3D1E7402AD04DA200179719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E3D1E7422AD04DA300179719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D1E7452AD04DA300179719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3D1E74C2AD04F4C00179719 /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E3D1E73E2AD04DA200179719 /* TrafficLightWithSwiftUIApp.swift */,
 				E3D1E7402AD04DA200179719 /* ContentView.swift */,
+				E3D1E74C2AD04F4C00179719 /* ColorCircleView.swift */,
 				E3D1E7422AD04DA300179719 /* Assets.xcassets */,
 				E3D1E7442AD04DA300179719 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D1E74D2AD04F4C00179719 /* ColorCircleView.swift in Sources */,
 				E3D1E7412AD04DA200179719 /* ContentView.swift in Sources */,
 				E3D1E73F2AD04DA200179719 /* TrafficLightWithSwiftUIApp.swift in Sources */,
 			);
