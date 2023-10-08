@@ -7,47 +7,55 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     
     // MARK: - Private properties
-    private let redLightView = ColorCircleView(color: Color.red)
-    private let yellowLightView = ColorCircleView(color: Color.yellow)
-    private let greenLightView = ColorCircleView(color: Color.green)
+    @State private var redOpacity = 0.3
+    @State private var yellowOpacity = 0.3
+    @State private var greenOpacity = 0.3
+    
+    @State private var currentLight = CurrentLight.red
     
     @State private var countOfTap = 0
     
     var body: some View {
         VStack {
-            redLightView
-                .opacity(opacityForRed())
-            yellowLightView
-                .opacity(opacityForYellow())
-            greenLightView
-                .opacity(opacityForGreen())
+            ColorCircleView(color: Color.red, opacity: redOpacity)
+            ColorCircleView(color: Color.yellow, opacity: yellowOpacity)
+            ColorCircleView(color: Color.green, opacity: greenOpacity)
             Spacer()
-            Button(action: { countOfTap += 1 } ) {
-                Text(countOfTap == 0 ? "Start" : "Next")
-                    .padding()
-                    .background(.blue)
-                    .foregroundStyle(.white)
-                    .font(.title)
-                    .clipShape(Capsule())
+            ButtonView(title: countOfTap == 0 ? "Start" : "Next") {
+                countOfTap += 1
+                nextColor()
             }
         }
         .padding()
     }
     
     // MARK: - Private func
-    private func opacityForRed() -> Double {
-        countOfTap % 3 == 1 ? 1 : 0.3
-    }
-    
-    private func opacityForYellow() -> Double {
-        countOfTap % 3 == 2 ? 1 : 0.3
-    }
-    
-    private func opacityForGreen() -> Double {
-        (countOfTap % 3 == 0) && countOfTap != 0 ? 1 : 0.3
+    private func nextColor() {
+        let lightIsOff = 0.3
+        let lightIsOn = 1.0
+        
+        switch currentLight {
+        case .red:
+            currentLight = .yellow
+            greenOpacity = lightIsOff
+            redOpacity = lightIsOn
+        case .yellow:
+            currentLight = .green
+            redOpacity = lightIsOff
+            yellowOpacity = lightIsOn
+        case .green:
+            currentLight = .red
+            yellowOpacity = lightIsOff
+            greenOpacity = lightIsOn
+            
+        }
     }
 }
 
