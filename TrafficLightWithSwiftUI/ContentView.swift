@@ -39,29 +39,15 @@ struct ContentView: View {
     
     // MARK: - Private func
     private func opacityForRed() -> Double {
-        if countOfTap % 3 == 1 {
-            return 1
-        }
-        return 0.3
+        countOfTap % 3 == 1 ? 1 : 0.3
     }
     
     private func opacityForYellow() -> Double {
-        if countOfTap % 3 == 2 {
-            return 1
-        }
-        return 0.3
+        countOfTap % 3 == 2 ? 1 : 0.3
     }
     
     private func opacityForGreen() -> Double {
-        if countOfTap == 0 {
-            return 0.3
-        }
-        
-        if countOfTap % 3 == 0 {
-            return 1
-        }
-        
-        return 0.3
+        (countOfTap % 3 == 0) && countOfTap != 0 ? 1 : 0.3
     }
 }
 
